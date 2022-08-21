@@ -1,0 +1,60 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWPF>true</UseWPF>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <ApplicationIcon>Privatus.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="appbar.arrow.right.png" />
+    <None Remove="appbar.check.png" />
+    <None Remove="appbar.close.png" />
+    <None Remove="appbar.window.minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Privatus.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="appbar.check.png" />
+    <Resource Include="appbar.window.minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="appbar.close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="appbar.arrow.right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Inferno" Version="1.6.4" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.4.336902">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Windows.Compatibility" Version="6.0.0" />
+    <PackageReference Include="System.ValueTuple" Version="4.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\I2PSharp\I2PSharp\I2PSharp.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="FriendRequestBlock.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MessageBlock.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="FriendRequestBlock.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MessageBlock.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>
